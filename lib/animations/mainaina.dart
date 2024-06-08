@@ -1,5 +1,5 @@
-import 'package:counter_50/animations/animated/animated_list_example.dart';
 import 'package:counter_50/animations/my_animated_widget.dart';
+import 'package:counter_50/animations/my_transitioned_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

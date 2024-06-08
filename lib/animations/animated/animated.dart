@@ -5,5 +5,6 @@ export 'animated_list_example.dart';
 export 'animated_opacity_example.dart';
 export 'animated_rotation_example.dart';
 export 'animated_switcher_example.dart';
-export 'tween_animation_builder_example.dart';
+export 'animated_size_example.dart';
 export 'animated_logo_of_flutter.dart';
+export 'tween_animation_builder_example.dart';

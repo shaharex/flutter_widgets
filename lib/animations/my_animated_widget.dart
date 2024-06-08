@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'animated/animated.dart';
 
 class MyAnimatedWidget extends StatefulWidget {
@@ -62,34 +63,52 @@ class _MyAnimatedWidgetState extends State<MyAnimatedWidget>
           ),
         ),
         body: Center(
-          child: AnimatedContainer(
+          child: AnimationsMag(
+            toggle: toggle,
             duration: duration,
-            curve: Curves.easeInOut,
-            padding:
-                toggle ? const EdgeInsets.all(60) : const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius:
-                  toggle ? BorderRadius.circular(0) : BorderRadius.circular(70),
-            ),
-            child: Column(
-              // don't use const here if you use the animations wouldn't work
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // AnimatedContainerExample(toggle: toggle, duration: duration),
-                // AnimatedCrossFadeExample(toggle: toggle, duration: duration),
-                // AnimatedSizeExample(toggle: toggle, duration: duration),
-                AnimatedRotationExample(toggle: toggle, duration: duration),
-                // AnimatedSwitcherExample(toggle: toggle, duration: duration),
-                // AnimatedIconExample(toggle: toggle, duration: duration),
-                // AnimatedOpacityExample(toggle: toggle, duration: duration),
-                // TweenAnimationBuilderExample(toggle: toggle),
-                // Expanded(child: AnimatedListExample()),
-                // AnimatedLogoOfFlutter(),
-              ],
-            ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AnimationsMag extends StatelessWidget {
+  const AnimationsMag({
+    super.key,
+    required this.duration,
+    required this.toggle,
+  });
+
+  final Duration duration;
+  final bool toggle;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: duration,
+      curve: Curves.easeInOut,
+      padding: toggle ? const EdgeInsets.all(60) : const EdgeInsets.all(30),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius:
+            toggle ? BorderRadius.circular(0) : BorderRadius.circular(70),
+      ),
+      child: Column(
+        // don't use const here if you use the animations wouldn't work
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // AnimatedContainerExample(toggle: toggle, duration: duration),
+          // AnimatedCrossFadeExample(toggle: toggle, duration: duration),
+          // AnimatedSizeExample(toggle: toggle, duration: duration),
+          AnimatedRotationExample(toggle: toggle, duration: duration),
+          // AnimatedSwitcherExample(toggle: toggle, duration: duration),
+          // AnimatedIconExample(toggle: toggle, duration: duration),
+          // AnimatedOpacityExample(toggle: toggle, duration: duration),
+          // TweenAnimationBuilderExample(toggle: toggle),
+          // Expanded(child: AnimatedListExample()),
+          // AnimatedLogoOfFlutter(),
+        ],
       ),
     );
   }
