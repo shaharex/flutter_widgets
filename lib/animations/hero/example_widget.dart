@@ -13,7 +13,7 @@ class ExampleWidget1 extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).pushNamed('second');
         },
-        child: Icon(Icons.next_plan),
+        child: const Icon(Icons.next_plan),
       ),
       backgroundColor: Colors.red,
       body: Align(
